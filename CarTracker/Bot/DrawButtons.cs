@@ -51,6 +51,9 @@ public static class DrawButtons
 
         var AddictiveButtons = new List<InlineKeyboardButton> { InlineKeyboardButton.WithCallbackData("➕", $"AddNewCar") };
         lines.Add(AddictiveButtons);
+        
+        var backButton = new List<InlineKeyboardButton> { InlineKeyboardButton.WithCallbackData("🔙", $"BackToMainMenu") };
+        lines.Add(backButton);
             
         return new InlineKeyboardMarkup(lines);
     }
@@ -63,6 +66,10 @@ public static class DrawButtons
             {
                 InlineKeyboardButton.WithCallbackData("🧾 Список вложений", $"ShowExp {car.Id}"),
                 InlineKeyboardButton.WithCallbackData("➕ Добавить вложение", $"NewExp {car.Id}")
+            },
+            new[]
+            {
+                InlineKeyboardButton.WithCallbackData("🔙", $"BackToListCar"),
             },
         });
             
@@ -86,6 +93,9 @@ public static class DrawButtons
 
         var AddictiveButtons = new List<InlineKeyboardButton> { InlineKeyboardButton.WithCallbackData("➕ Добавить вложение", $"NewExp {expenses.First().CarId}") };
         lines.Add(AddictiveButtons);
+        
+        var backButton = new List<InlineKeyboardButton> { InlineKeyboardButton.WithCallbackData("🔙", $"BackToCar {expenses.First().CarId}") };
+        lines.Add(backButton);
             
         return new InlineKeyboardMarkup(lines);
     }
