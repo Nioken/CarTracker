@@ -28,6 +28,9 @@ builder.Services.AddScoped<ICallbackHandler, DeleteCarCallback>();
 builder.Services.AddScoped<ICallbackHandler, ShowCarInfoCallback>();
 builder.Services.AddScoped<ICallbackHandler, ShowExpCallback>();
 builder.Services.AddScoped<ICallbackHandler, NewExpenseCallback>();
+builder.Services.AddScoped<ICallbackHandler, BackToMainMenuCallback>();
+builder.Services.AddScoped<ICallbackHandler, BackToCarList>();
+builder.Services.AddScoped<ICallbackHandler, BackToCarCallback>();
 
 var botToken = builder.Configuration["BotConfiguration:BotToken"];
 
